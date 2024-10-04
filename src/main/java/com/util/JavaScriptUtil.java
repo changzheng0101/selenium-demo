@@ -10,6 +10,12 @@ import org.openqa.selenium.WebElement;
  */
 public class JavaScriptUtil extends BaseUtil {
 
+    public static void scrollToElementJS(By by) {
+        WebElement element = driver.findElement(by);
+        String jsScript = "arguments[0].scrollIntoView();";
+        ((JavascriptExecutor) driver).executeScript(jsScript, element);
+    }
+
     public static void clickJS(By by) {
         WebElement element = driver.findElement(by);
         JavascriptExecutor executor = (JavascriptExecutor) driver;
