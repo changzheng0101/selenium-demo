@@ -24,6 +24,11 @@ public class BasePage {
         find(by).click();
     }
 
+    protected void set(By locator, String text) {
+        find(locator).clear();
+        find(locator).sendKeys(text);
+    }
+
     public static void delay(int milliseconds) {
         try {
             Thread.sleep(milliseconds);

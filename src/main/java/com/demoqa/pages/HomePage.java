@@ -1,6 +1,7 @@
 package com.demoqa.pages;
 
 import com.base.BasePage;
+import com.demoqa.pages.elements.ElementsPage;
 import com.demoqa.pages.forms.FormsPage;
 import org.openqa.selenium.By;
 
@@ -11,6 +12,12 @@ public class HomePage extends BasePage {
     public FormsPage goToForms() {
         click(formsCard);
         return new FormsPage();
+    }
+
+
+    public ElementsPage goToElementsPage() {
+        click(elementsCard);
+        return new ElementsPage();
     }
 }
 
