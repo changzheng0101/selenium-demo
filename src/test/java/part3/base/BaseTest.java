@@ -2,6 +2,7 @@ package part3.base;
 
 import com.base.BasePage;
 import com.demoqa.pages.HomePage;
+import com.util.BaseUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -17,6 +18,7 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(DEMOQA_URL);
+        BaseUtil.setDriver(driver);
         BasePage.setWebDriver(driver);
         homePage = new HomePage();
     }
