@@ -1,6 +1,5 @@
 package com.demoqa.pages.forms;
 
-import com.util.JavaScriptUtil;
 import org.openqa.selenium.By;
 
 import static com.util.JavaScriptUtil.clickJS;

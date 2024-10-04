@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeClass;
 public class BaseTest {
     private WebDriver driver;
     protected HomePage homePage;
-    private String DEMOQA_URL = "https://demoqa.com/";
+    private final String DEMOQA_URL = "https://demoqa.com/";
 
     @BeforeClass
     public void setUp() {

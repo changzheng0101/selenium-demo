@@ -12,7 +12,7 @@ public class WebTablesTest extends BaseTest {
         String email = "alden@example.com";
         String newAge = "99";
 
-        WebTablesPage webTablesPage = homePage.goToElementsPage().clickWebTablesPage();
+        WebTablesPage webTablesPage = homePage.goToElementsPage().clickWebTables();
         webTablesPage.clickEdit(email);
         webTablesPage.setAge(newAge);
         webTablesPage.clickSubmitButton();
