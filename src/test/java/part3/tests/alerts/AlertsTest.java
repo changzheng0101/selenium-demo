@@ -29,4 +29,17 @@ public class AlertsTest extends BaseTest {
         Assert.assertEquals(actualConfirmationResult, expectedConfirmationResult,
                 "\n Actual & Expected Messages Do Not Match \n");
     }
+
+    @Test
+    public void testPromptAlert() {
+        AlertsPage alertsPage = homePage.goToAlertsFrameAndWindows().clickAlerts();
+        alertsPage.clickPromptAlertButton();
+        String alertInputText = "Hello World";
+        String expectedPromptResult = "You entered " + alertInputText;
+        setAlertText(alertInputText);
+        acceptAlert();
+        String actualPromptResult = alertsPage.getPromptResult();
+        Assert.assertEquals(actualPromptResult, expectedPromptResult,
+                "\n Actual & Expected Messages Do Not Match \n");
+    }
 }
