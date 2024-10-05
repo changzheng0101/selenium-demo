@@ -1,7 +1,6 @@
 package com.demoqa.pages.widgets;
 
 import com.util.GetUtil;
-import com.util.WaitUtil;
 import org.openqa.selenium.By;
 
 import static com.util.WaitUtil.fluentWaitUntilVisible;

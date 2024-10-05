@@ -7,6 +7,10 @@ public class GetUtil extends BaseUtil {
         return driver.findElement(locator).getText();
     }
 
+    public static String getWebElementAttribute(By locator, String attribute) {
+        return driver.findElement(locator).getAttribute(attribute);
+    }
+
     public static String getURL() {
         return driver.getCurrentUrl();
     }
