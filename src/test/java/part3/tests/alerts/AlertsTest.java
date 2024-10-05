@@ -18,4 +18,15 @@ public class AlertsTest extends BaseTest {
                 "\n Actual & Expected Messages Do Not Match \n");
         acceptAlert();
     }
+
+    @Test
+    public void testConfirmAlert() {
+        AlertsPage alertsPage = homePage.goToAlertsFrameAndWindows().clickAlerts();
+        alertsPage.clickConfirmAlertButton();
+        String expectedConfirmationResult = "You selected Cancel";
+        dismissAlert();
+        String actualConfirmationResult = alertsPage.getConfirmResult();
+        Assert.assertEquals(actualConfirmationResult, expectedConfirmationResult,
+                "\n Actual & Expected Messages Do Not Match \n");
+    }
 }

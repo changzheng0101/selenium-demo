@@ -16,6 +16,7 @@ import org.testng.annotations.BeforeClass;
 import java.io.File;
 import java.io.IOException;
 
+@SuppressWarnings("all")
 public class BaseTest {
     private WebDriver driver;
     protected HomePage homePage;

@@ -14,10 +14,6 @@ public class PracticeFormPage extends FormsPage {
         click(femaleRadioButton);
     }
 
-    public boolean isFemaleSelected() {
-        return find(femaleRadioButton).isSelected();
-    }
-
     public void selectSportsCheckbox() {
         if (!find(sportsCheckbox).isSelected()) {
             clickJS(sportsCheckbox);
