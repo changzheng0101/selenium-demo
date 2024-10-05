@@ -8,6 +8,7 @@ public class AlertsFrameAndWindowsPage extends HomePage {
     private final By modalDialogsMenuItem = By.xpath("//span[text()='Modal Dialogs']");
     private final By alertsMenuItem = By.xpath("//span[text()='Alerts']");
     private final By framesMenuItem = By.xpath("//span[text()='Frames']");
+    private final By browserWindowsMenuItem = By.xpath("//span[text()='Browser Windows']");
 
 
     public ModalDialogsPage clickModalDialogs() {
@@ -23,5 +24,10 @@ public class AlertsFrameAndWindowsPage extends HomePage {
     public FramesPage clickFrames() {
         click(framesMenuItem);
         return new FramesPage();
+    }
+
+    public BrowserWindowsPage clickBrowserWindows() {
+        click(browserWindowsMenuItem);
+        return new BrowserWindowsPage();
     }
 }
