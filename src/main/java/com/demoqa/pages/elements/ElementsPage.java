@@ -5,7 +5,9 @@ import org.openqa.selenium.By;
 
 public class ElementsPage extends HomePage {
     private final By webTablesMenuItem = By.xpath("//ul[@class='menu-list']//span[text()='Web Tables']");
-    private final By LinksMenuItem = By.xpath("//ul[@class='menu-list']//span[text()='Links']");
+    private final By linksMenuItem = By.xpath("//ul[@class='menu-list']//span[text()='Links']");
+    private final By dynamicPropertiesMenuItem =
+            By.xpath("//ul[@class='menu-list']//span[text()='Dynamic Properties']");
 
     public WebTablesPage clickWebTables() {
         click(webTablesMenuItem);
@@ -13,7 +15,12 @@ public class ElementsPage extends HomePage {
     }
 
     public LinksPage clickLinks() {
-        click(LinksMenuItem);
+        click(linksMenuItem);
         return new LinksPage();
+    }
+
+    public DynamicPropertiesPage clickDynamicProperties() {
+        click(dynamicPropertiesMenuItem);
+        return new DynamicPropertiesPage();
     }
 }
