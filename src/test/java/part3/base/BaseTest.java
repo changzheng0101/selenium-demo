@@ -12,6 +12,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,6 +27,10 @@ public class BaseTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+    }
+
+    @BeforeMethod
+    public void loadApplication() {
         driver.get(DEMOQA_URL);
         BaseUtil.setDriver(driver);
         BasePage.setWebDriver(driver);
