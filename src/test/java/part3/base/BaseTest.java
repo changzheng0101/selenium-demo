@@ -3,10 +3,18 @@ package part3.base;
 import com.base.BasePage;
 import com.demoqa.pages.HomePage;
 import com.util.BaseUtil;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+
+import java.io.File;
+import java.io.IOException;
 
 public class BaseTest {
     private WebDriver driver;
@@ -23,9 +31,28 @@ public class BaseTest {
         homePage = new HomePage();
     }
 
+    @AfterMethod
+    public void takeFailResultScreenshot(ITestResult testResult) {
+        if (testResult.getStatus() == ITestResult.FAILURE) {
+            TakesScreenshot screenshot = (TakesScreenshot) driver;
+            File source = screenshot.getScreenshotAs(OutputType.FILE);
+            File target = new File(System.getProperty("user.dir") +
+                    "/screenshots/" + java.time.LocalDate.now() + "/"
+                    + testResult.getName() + ".png");
+            if (!target.getParentFile().exists()) {
+                target.getParentFile().mkdirs();
+            }
+            try {
+                FileHandler.copy(source, target);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("screen shot at " + target);
+        }
+    }
+
     @AfterClass
     public void tearDown() {
-        BasePage.delay(3000);
         driver.quit();
     }
 }
