@@ -1,8 +1,11 @@
 package com.base;
 
+import com.util.JavaScriptUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import static com.util.JavaScriptUtil.scrollToElementJS;
 
 public class BasePage {
     public static WebDriver driver;
@@ -21,6 +24,7 @@ public class BasePage {
     }
 
     protected void click(By by) {
+        scrollToElementJS(by);
         find(by).click();
     }
 
